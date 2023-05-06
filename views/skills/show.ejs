@@ -1,14 +1,14 @@
 <%- include('../partials/header') %>
 
     <h3><%= skill.skill %></h3>
-    <h3>Mastered the Skill?: <%= skill.done ? 'Yes' : 'No' %></h3>
+    <h3>Mastered the Skill?: <%= skill.mastered ? 'Yes' : 'No' %></h3>
 
-    <form action="/skills/new" class="add-form">
-        <button type="submit">ADD SKILL</button>
+    <form action="/skills/<%= skill.id %>/edit" class="edit-form">
+        <button type="submit">EDIT SKILL</button>
     </form>
 
     <br><br>
-    
+
     <form action="/skills/<%= skill.id %>?_method=DELETE"
         class="delete-form" method="POST">
         <button type="submit">DELETE SKILL</button>
